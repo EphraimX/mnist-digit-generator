@@ -32,9 +32,9 @@ class DigitCNN(nn.Module):
 
 # --- LOAD MODEL ---
 @st.cache_resource
-def load_model(path='digit_cnn.pth'):
+def load_model():
     model = DigitCNN()
-    model.load_state_dict(torch.load(path, map_location=torch.device('cpu')))
+    model.load_state_dict(torch.load("streamlit_app/digit_cnn.pth", map_location=torch.device('cpu')))
     model.eval()
     return model
 
